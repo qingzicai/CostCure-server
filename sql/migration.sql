@@ -1,0 +1,16 @@
+-- insert into "hospital_prices_NE"
+-- select
+--     hp.cms_certification_num,
+--     hp.price,
+--     hp.code,
+--     hp.description,
+--     hp.internal_revenue_code,
+--     h.name hospital_name,
+--     h.state hospital_state,
+--     h.city hospital_city,
+--     h.zip5 hospital_zip5,
+--     h.address hospital_address
+-- from hospital_prices hp
+--  inner join hospitals h on hp.cms_certification_num = h.cms_certification_num
+-- where h.state in ('MA','VT','CT','ME','NH')
+
