@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Hospital {
+    id                   Int    @id @default(autoincrement())
+    cms_certification_num Int
+    name                 String
+    address              String
+    city                 String
+    state                String
+    zip5                 Int
+    phone_number         Int
+    homepage_url         String
+    chargemaster_url     String
+    // user User[]
+
+}
+
+model User {
+    id           Int    @id @default(autoincrement())
+    email        String
+    // hospital_id Int
+
+    // Prisma Rel stuff
+    savedHospitals   UserSavedHospital[]
+    // hospital     Hospital @relation(fields: [hospital_id], references: [id])
+}
+
+// pivot tables
+model UserSavedHospital {
+    id           Int      @id @default(autoincrement())
+    user_id      Int
+    hospital_id  Int
+
+    // prima magic stuff
+    user         User     @relation(fields: [user_id], references: [id])
+    hospital     Hospital @relation(fields: [hospital_id], references: [id])
+}
