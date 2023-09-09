@@ -21,8 +21,9 @@ model Hospital {
     phone_number         Int
     homepage_url         String
     chargemaster_url     String
+    savedHospitals   UserSavedHospital[]
     // user User[]
-
+    @@map("hospitals")
 }
 
 model User {
@@ -33,6 +34,7 @@ model User {
     // Prisma Rel stuff
     savedHospitals   UserSavedHospital[]
     // hospital     Hospital @relation(fields: [hospital_id], references: [id])
+    @@map("users")
 }
 
 // pivot tables
@@ -44,4 +46,5 @@ model UserSavedHospital {
     // prima magic stuff
     user         User     @relation(fields: [user_id], references: [id])
     hospital     Hospital @relation(fields: [hospital_id], references: [id])
+    @@map("user_saved_hospitals")
 }

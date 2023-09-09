@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/cost-cure-server.iml" filepath="$PROJECT_DIR$/.idea/cost-cure-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../cost-cure-server/.idea/cost-cure-server.iml" filepath="$PROJECT_DIR$/../cost-cure-server/.idea/cost-cure-server.iml" />
     </modules>
   </component>
 </project>
